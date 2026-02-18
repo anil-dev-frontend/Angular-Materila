@@ -1,0 +1,22 @@
+.app-footer {
+  margin-top: auto; // Ise bottom par push karne ke liye
+}
+
+.footer-toolbar {
+  height: auto !important; // Content ke hisaab se height badhe
+  padding: 20px 0;
+  background-color: var(--primary-color) !important; // Theme color
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+}
+
+.footer-links a {
+  color: white;
+}

@@ -1,39 +1,57 @@
-
-// Include theming for Angular Material with `mat.theme()`.
-// This Sass mixin will define CSS variables that are used for styling Angular Material
-// components according to the Material 3 design spec.
-// Learn more about theming and how to use it for your application's
-// custom components at https://material.angular.dev/guide/theming
 @use '@angular/material' as mat;
+@include mat.core();
 
-html {
-  @include mat.theme((
-    color: (
-      primary: mat.$azure-palette,
-      tertiary: mat.$blue-palette,
-    ),
-    typography: Roboto,
-    density: 0,
-  ));
+// Default Variables (Fallback)
+:root {
+  --primary-color: #1976d2;
+  --bg-color: #ffffff;
+  --text-color: #212121;
 }
 
+// Theme Definitions
+body.theme-rose-red {
+  --primary-color: #ff1744;
+  --bg-color: #fff5f5; 
+  --text-color: #4a0007;
+}
+
+body.theme-azure-blue {
+  --primary-color: #2979ff;
+  --bg-color: #f0f7ff;
+  --text-color: #0d47a1;
+}
+
+body.theme-magenta-violet {
+  --primary-color: #9c27b0;
+  --bg-color: #fcf0ff;
+  --text-color: #4a148c;
+}
+
+body.theme-cyan-orange {
+  --primary-color: #00bcd4;
+  --bg-color: #f0fdff;
+  --text-color: #006064;
+}
+
+// Global Body Setup
 body {
-  // Default the application to a light color theme. This can be changed to
-  // `dark` to enable the dark color theme, or to `light dark` to defer to the
-  // user's system settings.
-  color-scheme: light;
-
-  // Set a default background, font and text colors for the application using
-  // Angular Material's system-level CSS variables. Learn more about these
-  // variables at https://material.angular.dev/guide/system-variables
-  background-color: var(--mat-sys-surface);
-  color: var(--mat-sys-on-surface);
-  font: var(--mat-sys-body-medium);
-
-  // Reset the user agent margin.
   margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: var(--bg-color) !important; // Ye poore body ka color change karega
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
 }
-/* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+// Material Toolbar Override
+.mat-toolbar.mat-primary {
+  background-color: var(--primary-color) !important;
+  color: white;
+}
+
+// Router Outlet ke content ke liye container
+.main-container {
+  padding: 20px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}

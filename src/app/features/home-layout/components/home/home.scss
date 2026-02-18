@@ -1,0 +1,46 @@
+.landing-container {
+  padding: 40px 20px;
+  background-color: var(--bg-color); // Theme ke saath badlega
+  color: var(--text-color);
+  min-height: 80vh;
+}
+
+.hero-section {
+  text-align: center;
+  padding: 60px 0;
+
+  .display-1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .highlight {
+    color: var(--primary-color); // Theme color
+  }
+
+  .lead-text {
+    font-size: 1.2rem;
+    opacity: 0.8;
+    margin-bottom: 30px;
+  }
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  background-color: rgba(255, 255, 255, 0.1); // Translucent effect
+  border-top: 4px solid var(--primary-color); // Top border badlega
+  color: var(--text-color);
+}
+
+.hero-btn {
+  margin: 0 10px;
+  padding: 0 30px;
+}

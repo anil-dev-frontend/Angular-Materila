@@ -1,0 +1,39 @@
+<mat-toolbar class="app-header" color="primary">
+  <!-- Logo / Brand -->
+  <span class="logo">MyApp</span>
+
+  <!-- Navigation -->
+  <nav class="nav-links">
+    <a mat-button routerLink="/">Home</a>
+    <a mat-button routerLink="/about">About Us</a>
+    <a mat-button routerLink="/features">Features</a>
+    <a mat-button routerLink="/blog">Blog</a>
+    <a mat-raised-button color="accent" routerLink="/login">
+      Login
+    </a>
+  </nav>
+
+  <!-- Spacer -->
+  <span class="spacer"></span>
+
+  <!-- Theme Switcher -->
+  <button mat-button [matMenuTriggerFor]="themeMenu">
+    Theme
+  </button>
+
+  <mat-menu #themeMenu="matMenu">
+    <button mat-menu-item (click)="changeTheme('theme-rose-red')">
+      Rose & Red
+    </button>
+    <button mat-menu-item (click)="changeTheme('theme-azure-blue')">
+      Azure & Blue
+    </button>
+    <button mat-menu-item (click)="changeTheme('theme-magenta-violet')">
+      Magenta & Violet
+    </button>
+    <button mat-menu-item (click)="changeTheme('theme-cyan-orange')">
+      Cyan & Orange
+    </button>
+  </mat-menu>
+</mat-toolbar>
+
